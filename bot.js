@@ -102,23 +102,23 @@ client.on('message', async msg => {
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
         
-        if (!voiceChannel) return msg.channel.send("«‰  ·„  œŒ· —Ê„ ’Ê Ì");
+        if (!voiceChannel) return msg.channel.send("√á√§√ä √°√£ √ä√è√é√° √ë√¶√£ √ï√¶√ä√≠");
         
         const permissions = voiceChannel.permissionsFor(msg.client.user);
         
         if (!permissions.has('CONNECT')) {
 
-			return msg.channel.send("·Ì”  ·œÌ ’·«ÕÌ«  ··œŒÊ· «·Ï «·—Ê„");
+			return msg.channel.send("√°√≠√ì√ä √°√è√≠ √ï√°√á√ç√≠√á√ä √°√°√è√é√¶√° √á√°√¨ √á√°√ë√¶√£");
         }
         
 		if (!permissions.has('SPEAK')) {
 
-			return msg.channel.send("«‰« ·« Ì„ﬂ‰‰Ì «· ﬂ·„ ›Ì Â«–Â «·—Ê„");
+			return msg.channel.send("√á√§√á √°√á √≠√£√ü√§√§√≠ √á√°√ä√ü√°√£ √ù√≠ √•√á√ê√• √á√°√ë√¶√£");
 		}
 
 		if (!permissions.has('EMBED_LINKS')) {
 
-			return msg.channel.sendMessage("«‰« ·« «„·ﬂ ’·«ÕÌ«  «—”«· —Ê«»ÿ")
+			return msg.channel.sendMessage("√á√§√á √°√á √á√£√°√ü √ï√°√á√ç√≠√á√ä √á√ë√ì√á√° √ë√¶√á√à√ò")
 		}
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -162,7 +162,7 @@ client.on('message', async msg => {
 						});
 					} catch (err) {
 						console.error(err);
-						return msg.channel.send('·„ Ì „ «Œ Ì«— «·«€‰Ì…');
+						return msg.channel.send('√°√£ √≠√ä√£ √á√é√ä√≠√á√ë √á√°√á√õ√§√≠√â');
                     }
                     
 					const videoIndex = parseInt(response.first().content);
@@ -181,31 +181,31 @@ client.on('message', async msg => {
         
 	} else if (command === `skip`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("ÌÃ» «‰  ﬂÊ‰ ›Ì —Ê„ ’Ê Ì");
-        if (!serverQueue) return msg.channel.send("·Ì”  Â‰«ﬂ «€«‰Ì ·Ì „ «· ŒÿÌ");
+		if (!msg.member.voiceChannel) return msg.channel.send("√≠√å√à √á√§ √ä√ü√¶√§ √ù√≠ √ë√¶√£ √ï√¶√ä√≠");
+        if (!serverQueue) return msg.channel.send("√°√≠√ì√ä √•√§√á√ü √á√õ√á√§√≠ √°√≠√ä√£ √á√°√ä√é√ò√≠");
 
-		serverQueue.connection.dispatcher.end(' „  ŒÿÌ «·«€‰Ì…');
+		serverQueue.connection.dispatcher.end('√ä√£ √ä√é√ò√≠ √á√°√á√õ√§√≠√â');
         return undefined;
         
 	} else if (command === `stop`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("ÌÃ» «‰  ﬂÊ‰ ›Ì —Ê„ ’Ê Ì");
+		if (!msg.member.voiceChannel) return msg.channel.send("√≠√å√à √á√§ √ä√ü√¶√§ √ù√≠ √ë√¶√£ √ï√¶√ä√≠");
         if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
         
 		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end(' „ «Ìﬁ«› «·«€‰Ì… ·ﬁœ Œ—Ã  „‰ «·—Ê„ «·’Ê Ì');
+		serverQueue.connection.dispatcher.end('√ä√£ √á√≠√û√á√ù √á√°√á√õ√§√≠√â √°√û√è √é√ë√å√ä √£√§ √á√°√ë√¶√£ √á√°√ï√¶√ä√≠');
         return undefined;
         
 	} else if (command === `vol`) {
 
-		if (!msg.member.voiceChannel) return msg.channel.send("ÌÃ» «‰  ﬂÊ‰ ›Ì —Ê„ ’Ê Ì");
-		if (!serverQueue) return msg.channel.send('Ì⁄„· «·«„— ›ﬁÿ ⁄‰œ  ‘€Ì· „ﬁÿ⁄ ’Ê Ì');
-        if (!args[1]) return msg.channel.send(`·ﬁœ  „  €Ì— œ—Ã… «·’Ê  «·Ï**${serverQueue.volume}**`);
+		if (!msg.member.voiceChannel) return msg.channel.send("√≠√å√à √á√§ √ä√ü√¶√§ √ù√≠ √ë√¶√£ √ï√¶√ä√≠");
+		if (!serverQueue) return msg.channel.send('√≠√ö√£√° √á√°√á√£√ë √ù√û√ò √ö√§√è √ä√î√õ√≠√° √£√û√ò√ö √ï√¶√ä√≠');
+        if (!args[1]) return msg.channel.send(`√°√û√è √ä√£ √ä√õ√≠√ë √è√ë√å√â √á√°√ï√¶√ä √á√°√¨**${serverQueue.volume}**`);
         
 		serverQueue.volume = args[1];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
         
-        return msg.channel.send(`œ—Ã… «·’Ê  «·«‰**${args[1]}**`);
+        return msg.channel.send(`√è√ë√å√â √á√°√ï√¶√ä √á√°√á√§**${args[1]}**`);
 
 	} else if (command === `np`) {
 
@@ -230,15 +230,15 @@ client.on('message', async msg => {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send(' „ «·«Ìﬁ«›');
+			return msg.channel.send('√ä√£ √á√°√á√≠√û√á√ù');
 		}
-		return msg.channel.send('›Ì «‰ Ÿ«—  ‘€Ì· «·„ﬁÿ⁄');
+		return msg.channel.send('√ù√≠ √á√§√ä√ô√á√ë √ä√î√õ√≠√° √á√°√£√û√ò√ö');
 	} else if (command === "resume") {
 
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
-            return msg.channel.send(' „ «· ‘€Ì·');
+            return msg.channel.send('√ä√£ √á√°√ä√î√õ√≠√°');
             
 		}
 		return msg.channel.send('Queue is empty!');
@@ -283,7 +283,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		serverQueue.songs.push(song);
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
-		else return msg.channel.send(`**${song.title}**,  „  «÷«›… «·„ﬁÿ⁄ «·Ï ﬁ«∆„… «·«‰ Ÿ«— `);
+		else return msg.channel.send(`**${song.title}**, √ä√£√ä √á√ñ√á√ù√â √á√°√£√û√ò√ö √á√°√¨ √û√á√Ü√£√â √á√°√á√§√ä√ô√á√ë `);
 	} 
 	return undefined;
 }
@@ -315,17 +315,17 @@ function play(guild, song) {
 client.on('message', message => {
     if (message.content === 'help') {
         let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**√Ê«„— «·„ÌÊ“ﬂ...**')
-        .setDescription('**»—›ﬂ” «·»Ê  (!)**')
-        .addField('play', '· ‘€Ì· «€‰Ì…')
-        .addField('join', 'œŒÊ· —Ê„ﬂ «·’Ê Ì')
-        .addField('disconnect', '«·Œ—ÊÃ „‰ —Ê„ﬂ «·’Ê Ì')
-        .addField('skip', ' ŒÿÌ «·√€‰Ì…')
-        .addField('pause', '«Ìﬁ«› «·«€‰Ì… „ƒﬁ «')
-        .addField('resume', ' ﬂ„·… «·«€‰Ì…')
-        .addField('queue', '«ŸÂ«— ﬁ«∆„… «· ‘€Ì·')
-        .addField('np', '«ŸÂ«— «·«€‰Ì… «··Ì «‰  „‘€·Â« Õ«·Ì«')
-        .setFooter('(general_commands) ·«ŸÂ«— «·«Ê«„— «·⁄«„…')
+        .setTitle('**√É√¶√á√£√ë √á√°√£√≠√¶√í√ü...**')
+        .setDescription('**√à√ë√ù√ü√ì √á√°√à√¶√ä (!)**')
+        .addField('play', '√°√ä√î√õ√≠√° √á√õ√§√≠√â')
+        .addField('join', '√è√é√¶√° √ë√¶√£√ü √á√°√ï√¶√ä√≠')
+        .addField('disconnect', '√á√°√é√ë√¶√å √£√§ √ë√¶√£√ü √á√°√ï√¶√ä√≠')
+        .addField('skip', '√ä√é√ò√≠ √á√°√É√õ√§√≠√â')
+        .addField('pause', '√á√≠√û√á√ù √á√°√á√õ√§√≠√â √£√Ñ√û√ä√á')
+        .addField('resume', '√ä√ü√£√°√â √á√°√á√õ√§√≠√â')
+        .addField('queue', '√á√ô√•√á√ë √û√á√Ü√£√â √á√°√ä√î√õ√≠√°')
+        .addField('np', '√á√ô√•√á√ë √á√°√á√õ√§√≠√â √á√°√°√≠ √á√§√ä √£√î√õ√°√•√á √ç√á√°√≠√á')
+        .setFooter('(general_commands) √°√á√ô√•√á√ë √á√°√á√¶√á√£√ë √á√°√ö√á√£√â')
       message.channel.send(helpEmbed);
     }
 });
@@ -333,11 +333,11 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'general_commands') {
         let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**√Ê«„— ⁄«„…...**')
-        .addField('avatar', "«›« «— «·‘Œ’ «·„ÿ·Ê»")
-        .addField('gif', '«·»ÕÀ ⁄‰ ÃÌ› «‰   ÿ·»Â')
-        .addField('ping', '„⁄—›… ping «·»Ê ')
-        .setFooter('«·„“Ìœ ﬁ—Ì»« «‰ ‘«¡ «··Â!')
+        .setTitle('**√É√¶√á√£√ë √ö√á√£√â...**')
+        .addField('avatar', "√á√ù√á√ä√á√ë √á√°√î√é√ï √á√°√£√ò√°√¶√à")
+        .addField('gif', '√á√°√à√ç√ã √ö√§ √å√≠√ù √á√§√ä √ä√ò√°√à√•')
+        .addField('ping', '√£√ö√ë√ù√â ping √á√°√à√¶√ä')
+        .setFooter('√á√°√£√í√≠√è √û√ë√≠√à√á √á√§ √î√á√Å √á√°√°√•!')
       message.channel.send(helpEmbed);
     }
 });
